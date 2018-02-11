@@ -38,14 +38,15 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, hasWhippedCream);
+        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
 
     }
 
-    private String createOrderSummary(int price, boolean addWhippedCream ) {
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate ) {
         String priceMessage = "Name: King Julian";
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
+        priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity" + quantity;
         priceMessage += "\nTotal: $" + price;
         priceMessage += "\nThank you!";

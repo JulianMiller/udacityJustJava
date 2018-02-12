@@ -69,9 +69,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+    private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
+        int basePrice = 5;
+
+        if (addWhippedCream) {
+            basePrice = basePrice + 1;
+        }
+        if (addChocolate){
+            basePrice = basePrice + 2;
+        }
+        return quantity * basePrice;
     }
     /**
      * This method is called when the + button is clicked.
